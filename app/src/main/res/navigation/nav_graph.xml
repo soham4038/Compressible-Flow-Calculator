@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:startDestination="@id/mainFragment">
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.astrodev.flowcalc.MainFragment"
+        android:label="fragment_main"
+        tools:layout="@layout/fragment_main">
+        <action
+            android:id="@+id/action_mainFragment_to_conicalShock"
+            app:destination="@id/conicalShock" />
+        <action
+            android:id="@+id/action_mainFragment_to_isentropic"
+            app:destination="@id/isentropic" />
+        <action
+            android:id="@+id/action_mainFragment_to_normalShock"
+            app:destination="@id/normalShock" />
+        <action
+            android:id="@+id/action_mainFragment_to_obliqueShock"
+            app:destination="@id/obliqueShock" />
+        <action
+            android:id="@+id/action_mainFragment_to_fannoFlow"
+            app:destination="@id/fannoFlow" />
+    </fragment>
+    <fragment
+        android:id="@+id/isentropic"
+        android:name="com.astrodev.flowcalc.Isentropic"
+        android:label="Isentropic" />
+    <fragment
+        android:id="@+id/conicalShock"
+        android:name="com.astrodev.flowcalc.ConicalShock"
+        android:label="fragment_conical_shock"
+        tools:layout="@layout/fragment_conical_shock" />
+    <fragment
+        android:id="@+id/obliqueShock"
+        android:name="com.astrodev.flowcalc.ObliqueShock"
+        android:label="fragment_oblique_shock"
+        tools:layout="@layout/fragment_oblique_shock" />
+    <fragment
+        android:id="@+id/normalShock"
+        android:name="com.astrodev.flowcalc.NormalShock"
+        android:label="fragment_normal_shock"
+        tools:layout="@layout/fragment_normal_shock" />
+    <fragment
+        android:id="@+id/fannoFlow"
+        android:name="com.astrodev.flowcalc.FannoFlow"
+        android:label="fragment_fanno_flow"
+        tools:layout="@layout/fragment_fanno_flow" />
+</navigation>

@@ -1,0 +1,98 @@
+<resources>
+    <string name="app_name">FlowCalc</string>
+    <string name="gamma">Gamma</string>
+    <string name="mach_number">Mach Number</string>
+    <string name="p_p_u2080">P/P₀</string>
+    <string name="u03c1_u03c1_u2080">ρ/ρ₀</string>
+    <string name="t_t_u2080">T/T₀</string>
+    <string name="p_p_u002a">P/P*</string>
+    <string name="t_t_u002a">T/T*</string>
+    <string name="u03c1_u03c1_u002a">ρ/ρ*</string>
+    <string name="a_a_u002a">A/A*</string>
+    <string name="p_m_angle">P-M Angle</string>
+    <string name="mach_angle">Mach Angle</string>
+    <string name="calculate">Calculate</string>
+    <string name="m_u2081">M₁</string>
+    <string name="m_u2082">M₂</string>
+    <string name="p_u2080_u2082_p_u2080_u2081">P₀₂/P₀₁</string>
+    <string name="p_u2081_p_u2080_u2082">P₁/P₀₂</string>
+    <string name="p_u2082_p_u2081">P₂/P₁</string>
+    <string name="u03c1_u2082_u03c1_u2081">ρ₂/ρ₁</string>
+    <string name="t_u2082_t_u2081">T₂/T₁</string>
+    <string name="m_u2081_u2099">M₁ₙ</string>
+    <string name="m_u2082_u2099">M₂ₙ</string>
+    <string name="shockdetached">Shock Detached</string>
+    <string name="enter_m_u2081">Enter M₁</string>
+    <string name="turn_angle">Turn Angle</string>
+    <string name="wave_angle">Wave Angle</string>
+    <string name="about">This calculator is intended to provide a faster and more convenient alternative for calculating compressible flow parameters.Four sets of Isentropic relations are included.\n\n
+        Isentropic Flow Relations\n
+        Normal Shock Relations\n
+        Oblique Shock Relations\n
+        Conical Shock Relations\n
+        Fanno Flow Relations\n\n
+        Symbols have their usual meanings. Subscript \'o\' is used to refer to stagnation or total conditions, superscript \'*\' refers to sonic conditions.\n
+        \n\n\n\nCore code developed by Aerospace and Ocean Eng Depart., Virginia Tech and ported to android by SS(RA-109) SRMIST 2020.
+
+    </string>
+
+    <string-array name="isentropic_entries">
+        <item>Mach Number</item>
+        <item>@string/p_p_u2080</item>
+        <item>@string/t_t_u2080</item>
+        <item>@string/u03c1_u03c1_u2080</item>
+        <item>A/A\u002A (subsonic)</item>
+        <item>A/A\u002A (supersonic)</item>
+    </string-array>
+
+    <string-array name="nsr_entries">
+        <item>M₁</item>
+        <item>M₂</item>
+        <item>P₂/P₁</item>
+        <item>ρ₂/ρ₁</item>
+        <item>T₂/T₁</item>
+        <item>P₀₂/P₀₁</item>
+        <item>P₁/P₀₂</item>
+    </string-array>
+
+
+    <string-array name="osr_entries">
+        <item>Turn Angle(Weak Shock)</item>
+        <item>Turn Angle(Strong Shock</item>
+        <item>Wave Angle</item>
+        <item>@string/m_u2081_u2099</item>
+    </string-array>
+
+    <string-array name="csr_entries">
+        <item>Cone Angle</item>
+        <item>Wave Angle</item>
+        <item>M<sub>c</sub></item>
+    </string-array>
+    <string-array name="fanno_entries">
+        <item>Mach Number</item>
+        <item>T/T*</item>
+        <item>P/P*</item>
+        <item>P₀/P₀*(subsonic)</item>
+        <item>P₀/P₀*(supersonic)</item>
+        <item>U/U*</item>
+        <item>4fL*/D(subsonic)</item>
+        <item>4fL*/D(supersonic)</item>
+        <item>(s*-s)/R(subsonic)</item>
+        <item>(s*-s)/R(supersonic)</item>
+    </string-array>
+
+    <string name="rhoc">\u03c1&lt;sub&gt;&lt;small&gt;c&lt;/small&gt;&lt;/sub&gt;/ρ₁</string>
+    <string name="mc">M&lt;sub&gt;&lt;small&gt;c&lt;/small&gt;&lt;/sub&gt;</string>
+    <string name="cone_angle">Cone Angle</string>
+    <string name="shock_turn_angle">Shock Turn Angle</string>
+    <string name="pcp1">P&lt;sub&gt;&lt;small&gt;c&lt;/small&gt;&lt;/sub&gt;/P₁</string>
+    <string name="tc_t_u2081">T&lt;sub&gt;&lt;small&gt;c&lt;/small&gt;&lt;/sub&gt;/T₁</string>
+    <string name="p_u2080c_p_u2080_u2081">P&lt;sub&gt;&lt;small&gt;0c&lt;/small&gt;&lt;/sub&gt;/P&lt;sub&gt;&lt;small&gt;01&lt;/small&gt;&lt;/sub&gt;</string>
+    <string name="m">M</string>
+    <string name="p_u2080_p_u2080_u002a">P₀/P₀*</string>
+    <string name="u_u_u002a">U/U*</string>
+    <string name="_4fl_u002a_d">4fL*/D</string>
+    <string name="s_u002a_s_r">(s*-s)/R</string>
+
+
+</resources>
