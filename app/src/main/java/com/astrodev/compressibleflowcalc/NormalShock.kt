@@ -1,4 +1,4 @@
-package com.astrodev.flowcalc
+package com.astrodev.compressibleflowcalc
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -120,15 +120,30 @@ class NormalShock : Fragment() {
                     INPUT.isErrorEnabled = false
                 } else {
                     INPUT.isErrorEnabled = true
+                    INPUT.error = "Must be greater than 1"
                     return
                 }
             }
 
             3 -> {
+                if (input <= 1.0 || input >= (g + 1.0) / (g - 1.0)) {
+                    val e = (g + 1.0) / (g - 1.0)
+                    INPUT.isErrorEnabled = true
+                    INPUT.error = "Must be between 1 and $e"
+                    return
+                }
+                INPUT.isErrorEnabled = false
                 m1 = Math.sqrt(2.0 * input / (gamma + 1 - input * (gamma - 1.0)))
             }
 
             4 -> {
+
+                if (input <= 1.0) {
+                    INPUT.isErrorEnabled = true
+                    INPUT.error = "Must be greater than 1"
+                    return
+                }
+                INPUT.isErrorEnabled = false
                 val aa = 2.0 * gamma * (gamma - 1.0)
                 val bb =
                     4.0 * gamma - (gamma - 1.0) * (gamma - 1.0) - input * (gamma + 1.0) * (gamma + 1.0)
@@ -136,33 +151,47 @@ class NormalShock : Fragment() {
                 m1 = Math.sqrt((-bb + Math.sqrt(bb * bb - 4 * aa * cc)) / 2 / aa)
             }
             5 -> {
-                var mnew = 2.0
-                m1 = 0.0
-                while (Math.abs(mnew - m1) > 0.00001) {
-                    m1 = mnew
-                    val al = (gamma + 1) * m1 * m1 / ((gamma - 1) * m1 * m1 + 2)
-                    val be = (gamma + 1.0) / (2.0 * gamma * m1 * m1 - (gamma - 1))
-                    val daldm1 = (2 / m1 - 2 * m1 * (gamma - 1) / ((gamma - 1) * m1 * m1 + 2)) * al
-                    val dbedm1 = -4.0 * gamma * m1 * be / (2 * gamma * m1 * m1 - (gamma - 1))
-                    val fm =
-                        Math.pow(al, gamma / (gamma - 1)) * Math.pow(be, 1 / (gamma - 1)) - input
-                    val fdm =
-                        gamma / (gamma - 1) * Math.pow(al, 1 / (gamma - 1)) * daldm1 * Math.pow(
-                            be,
-                            1 / (gamma - 1)
-                        ) + Math.pow(al, gamma / (gamma - 1)) / (gamma - 1) * Math.pow(
-                            be,
-                            (2 - gamma) / (gamma - 1)
-                        ) * dbedm1
-                    mnew = m1 - fm / fdm
+                if (input >= 1.0 || input <= 0.0) {
+                    INPUT.isErrorEnabled = true
+                    INPUT.error = ("P02/P01 must be between 0 and 1")
+                    return
+                } else {
+                    INPUT.isErrorEnabled = false
+                    var mnew = 2.0
+                    m1 = 0.0
+                    while (Math.abs(mnew - m1) > 0.00001) {
+                        m1 = mnew
+                        val al = (gamma + 1) * m1 * m1 / ((gamma - 1) * m1 * m1 + 2)
+                        val be = (gamma + 1.0) / (2.0 * gamma * m1 * m1 - (gamma - 1))
+                        val daldm1 =
+                            (2 / m1 - 2 * m1 * (gamma - 1) / ((gamma - 1) * m1 * m1 + 2)) * al
+                        val dbedm1 = -4.0 * gamma * m1 * be / (2 * gamma * m1 * m1 - (gamma - 1))
+                        val fm =
+                            Math.pow(al, gamma / (gamma - 1)) * Math.pow(
+                                be,
+                                1 / (gamma - 1)
+                            ) - input
+                        val fdm =
+                            gamma / (gamma - 1) * Math.pow(al, 1 / (gamma - 1)) * daldm1 * Math.pow(
+                                be,
+                                1 / (gamma - 1)
+                            ) + Math.pow(al, gamma / (gamma - 1)) / (gamma - 1) * Math.pow(
+                                be,
+                                (2 - gamma) / (gamma - 1)
+                            ) * dbedm1
+                        mnew = m1 - fm / fdm
+                    }
                 }
             }
 
             6 -> {
                 val vmax = Math.pow((g + 1) / 2, -g / (g - 1.0))
                 if (input >= vmax || input <= 0.0) {
+                    INPUT.isErrorEnabled = true
+                    INPUT.error = ("P02/P01 must be between 0 and $vmax")
                     return
                 }
+                INPUT.isErrorEnabled = false
                 var mnew = 2.0
                 m1 = 0.0
                 while (Math.abs(mnew - m1) > 0.00001) {

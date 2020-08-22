@@ -1,4 +1,4 @@
-package com.astrodev.flowcalc
+package com.astrodev.compressibleflowcalc
 
 import android.R.layout
 import android.app.AlertDialog
@@ -37,7 +37,8 @@ class MainFragment : Fragment() {
             "Normal Shock",
             "Oblique Shock",
             "Conical Shock",
-            "Fanno Flow"
+            "Fanno Flow",
+            "Rayleigh Flow"
         )
 
         val arrayAdapter = ArrayAdapter(
@@ -71,6 +72,10 @@ class MainFragment : Fragment() {
                     4 -> {
                         Navigation.findNavController(view)
                             .navigate(R.id.action_mainFragment_to_fannoFlow)
+                    }
+                    5 -> {
+                        Navigation.findNavController(view)
+                            .navigate(R.id.action_mainFragment_to_rayleighFlow)
                     }
                 }
             }

@@ -5,7 +5,7 @@
     app:startDestination="@id/mainFragment">
     <fragment
         android:id="@+id/mainFragment"
-        android:name="com.astrodev.flowcalc.MainFragment"
+        android:name="com.astrodev.compressibleflowcalc.MainFragment"
         android:label="fragment_main"
         tools:layout="@layout/fragment_main">
         <action
@@ -23,29 +23,37 @@
         <action
             android:id="@+id/action_mainFragment_to_fannoFlow"
             app:destination="@id/fannoFlow" />
+        <action
+            android:id="@+id/action_mainFragment_to_rayleighFlow"
+            app:destination="@id/rayleighFlow" />
     </fragment>
     <fragment
         android:id="@+id/isentropic"
-        android:name="com.astrodev.flowcalc.Isentropic"
+        android:name="com.astrodev.compressibleflowcalc.Isentropic"
         android:label="Isentropic" />
     <fragment
         android:id="@+id/conicalShock"
-        android:name="com.astrodev.flowcalc.ConicalShock"
+        android:name="com.astrodev.compressibleflowcalc.ConicalShock"
         android:label="fragment_conical_shock"
         tools:layout="@layout/fragment_conical_shock" />
     <fragment
         android:id="@+id/obliqueShock"
-        android:name="com.astrodev.flowcalc.ObliqueShock"
+        android:name="com.astrodev.compressibleflowcalc.ObliqueShock"
         android:label="fragment_oblique_shock"
         tools:layout="@layout/fragment_oblique_shock" />
     <fragment
         android:id="@+id/normalShock"
-        android:name="com.astrodev.flowcalc.NormalShock"
+        android:name="com.astrodev.compressibleflowcalc.NormalShock"
         android:label="fragment_normal_shock"
         tools:layout="@layout/fragment_normal_shock" />
     <fragment
         android:id="@+id/fannoFlow"
-        android:name="com.astrodev.flowcalc.FannoFlow"
+        android:name="com.astrodev.compressibleflowcalc.FannoFlow"
         android:label="fragment_fanno_flow"
         tools:layout="@layout/fragment_fanno_flow" />
+    <fragment
+        android:id="@+id/rayleighFlow"
+        android:name="com.astrodev.compressibleflowcalc.RayleighFlow"
+        android:label="fragment_rayleigh_flow"
+        tools:layout="@layout/fragment_rayleigh_flow" />
 </navigation>

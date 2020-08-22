@@ -1,4 +1,4 @@
-package com.astrodev.flowcalc
+package com.astrodev.compressibleflowcalc
 
 import android.os.Bundle
 

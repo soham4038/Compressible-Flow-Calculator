@@ -3,12 +3,20 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 
 android {
+    signingConfigs {
+        release {
+            storeFile file('D:\\keystore.jks')
+            storePassword '123456'
+            keyAlias 'soham'
+            keyPassword '123456'
+        }
+    }
     compileSdkVersion 30
     buildToolsVersion "30.0.1"
 
     defaultConfig {
-        applicationId "com.astrodev.flowcalc"
-        minSdkVersion 26
+        applicationId "com.astrodev.compressibleflowcalc"
+        minSdkVersion 21
         targetSdkVersion 30
         versionCode 1
         versionName "1.0"
@@ -18,9 +26,16 @@ android {
 
     buildTypes {
         release {
-            minifyEnabled true
+            minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            applicationIdSuffix '.release'
+            versionNameSuffix kotlin_version
+            signingConfig signingConfigs.release
         }
+    }
+    compileOptions {
+        targetCompatibility "1.8"
+        sourceCompatibility "1.8"
     }
 }
 

@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">FlowCalc</string>
+    <string name="app_name">AeroFlow Calculator</string>
     <string name="gamma">Gamma</string>
     <string name="mach_number">Mach Number</string>
     <string name="p_p_u2080">P/P₀</string>
@@ -30,7 +30,8 @@
         Normal Shock Relations\n
         Oblique Shock Relations\n
         Conical Shock Relations\n
-        Fanno Flow Relations\n\n
+        Fanno Flow Relations\n
+        Rayleigh Flow Relations\n\n
         Symbols have their usual meanings. Subscript \'o\' is used to refer to stagnation or total conditions, superscript \'*\' refers to sonic conditions.\n
         \n\n\n\nCore code developed by Aerospace and Ocean Eng Depart., Virginia Tech and ported to android by SS(RA-109) SRMIST 2020.
 
@@ -41,6 +42,8 @@
         <item>@string/p_p_u2080</item>
         <item>@string/t_t_u2080</item>
         <item>@string/u03c1_u03c1_u2080</item>
+        <item>Mach Angle(degree)</item>
+        <item>P-M Angle</item>
         <item>A/A\u002A (subsonic)</item>
         <item>A/A\u002A (supersonic)</item>
     </string-array>
@@ -55,6 +58,19 @@
         <item>P₁/P₀₂</item>
     </string-array>
 
+    <string-array name="rayleigh">
+        <item>Mach number</item>
+        <item>To/To* (sub)</item>
+        <item>To/To* (sup)</item>
+        <item>T/T* (below Tmax)</item>
+        <item>T/T* (above Tmax)</item>
+        <item>P/P*</item>
+        <item>Po/Po* (sub)</item>
+        <item>Po/Po* (sup)</item>
+        <item>U/U*</item>
+        <item>(s*-s)/R (sub)</item>
+        <item>(s*-s)/R (sup)</item>
+    </string-array>
 
     <string-array name="osr_entries">
         <item>Turn Angle(Weak Shock)</item>
@@ -93,6 +109,9 @@
     <string name="u_u_u002a">U/U*</string>
     <string name="_4fl_u002a_d">4fL*/D</string>
     <string name="s_u002a_s_r">(s*-s)/R</string>
+
+
+    <string name="t_u2080_t_u2080_u002a">T₀/T₀*</string>
 
 
 </resources>

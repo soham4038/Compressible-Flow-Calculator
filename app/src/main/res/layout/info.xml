@@ -10,6 +10,7 @@
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:clickable="false"
         android:fontFamily="monospace"
         android:inputType="textMultiLine"
         android:text="@string/about"
@@ -18,5 +19,9 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        android:cursorVisible="false"
+        android:duplicateParentState="false"
+        android:focusable="false"
+        android:focusableInTouchMode="false"
         app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

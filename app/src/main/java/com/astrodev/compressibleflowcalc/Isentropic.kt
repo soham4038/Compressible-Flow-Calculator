@@ -1,4 +1,4 @@
-package com.astrodev.flowcalc
+package com.astrodev.compressibleflowcalc
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -171,7 +171,7 @@ class Isentropic : Fragment() {
                 5 -> {
                     INPUT.isErrorEnabled = false
                     val numax = (Math.sqrt((gamma + 1) / (gamma - 1)) - 1) * 90
-                    if (input <= 0 && input >= numax) {
+                    if (input <= 0 || input >= numax) {
                         INPUT.isErrorEnabled = true
                         INPUT.error = " Must be between 0 and $numax"
                         return
